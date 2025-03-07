@@ -1,5 +1,16 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+   <div id="app">
+    <div class="home">
+    <h1>To be or not to be</h1>
+  </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "about",
+};
+</script>
+
+<style scoped>
+</style>

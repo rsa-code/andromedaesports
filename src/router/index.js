@@ -1,5 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
+import RegisterView from "@/views/RegisterView.vue";
+import LoginView from '@/views/LoginView.vue';
+import TeamsView from '@/views/TeamsView.vue';
+import TeamsDetailsView from '@/views/TeamsDetailsView.vue';
+import CalendarView from '@/views/CalendarView.vue';
+import NewsView from "@/views/NewsView.vue";
+import NewsDetailsView from '@/views/NewsDetailsView.vue';
+import MerchandiseView from '@/views/MerchandiseView.vue';
 
 const routes = [
   {
@@ -10,12 +19,68 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: AboutView
+    
+  },
+  {
+    path:'/register',
+    name: 'register',
+    component: RegisterView
+  },
+
+  {
+    path:'/login',
+    name: 'login',
+    component: LoginView
+  },
+
+  {
+    path:'/teams',
+    name: 'teams',
+    component: TeamsView
+
+  },
+
+  {
+    path: "/team/:id",
+    name: "team-details",
+    component: TeamsDetailsView,
+    props: true,
+  },
+
+  {
+    path: "/calendar",
+    name: "calendar",
+    component: CalendarView
+  },
+
+  { 
+
+    path: "/news", 
+    name: "news", 
+    component: NewsView 
+  
+  },
+
+  { 
+
+    path: '/news/:id', 
+    name: 'news-details', 
+    component: NewsDetailsView, 
+    props: true 
+    
+  },
+
+  {
+
+    path: '/merch',
+    name: 'merch',
+    component: MerchandiseView
+
   }
-]
+
+  ];
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
